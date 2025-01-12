@@ -12,7 +12,8 @@ from homeassistant.const import CONF_HOST, CONF_PORT, CONF_TIMEOUT
 from .const import DOMAIN, TIMEOUT
 from homeassistant.exceptions import ConfigEntryNotReady
 import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.typing import HomeAssistantType
+"""from homeassistant.helpers.typing import HomeAssistantType"""
+from homeassistant.core import HomeAssistant
 from homeassistant.util import Throttle
 
 from . import config_flow  # noqa: F401
@@ -41,7 +42,8 @@ async def async_setup(hass, config):
     )
     return True
 
-async def async_setup_entry(hass: HomeAssistantType, entry: ConfigEntry):
+"""async def async_setup_entry(hass: HomeAssistantType, entry: ConfigEntry):"""
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     """Connect to Airtouch3 Unit"""
     conf = entry.data
 
